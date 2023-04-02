@@ -61,8 +61,7 @@ struct AddBookView: View {
                         newBook.rating = Int16(rating)
                         newBook.genre = genre
                         newBook.review = review
-                        
-                        print("Genre: \(genre)")
+                        newBook.date = Date.now
                         
                         try? moc.save()
                         
@@ -72,6 +71,17 @@ struct AddBookView: View {
             }
             .navigationTitle("Add Book")
         }
+    }
+    
+    private func isInputValid() -> Bool {
+        
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
+            author.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
+            genre.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return false
+        }
+        
+        return true
     }
 }
 

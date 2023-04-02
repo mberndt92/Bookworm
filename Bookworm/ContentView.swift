@@ -32,6 +32,7 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text(book.title ?? "Unknown Title")
                                     .font(.headline)
+                                    .foregroundColor(book.rating > 1 ? .primary : .red)
                                 
                                 Text(book.author ?? "Unknown Author")
                                     .foregroundColor(.secondary)
@@ -58,13 +59,6 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingAddScreen) {
             AddBookView()
-        }
-        .onAppear {
-            for book in books {
-                print("title: \(book.title ?? "")")
-                print("genre: \(book.genre ?? "")")
-                print("author: \(book.author ?? "")")
-            }
         }
     }
     
