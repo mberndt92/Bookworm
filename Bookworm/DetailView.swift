@@ -72,18 +72,18 @@ struct DetailView: View {
 }
 
 //struct DetailView_Previews: PreviewProvider {
-//    
+//
 //    static var previews: some View {
-//        
-//        
+//
+//
 //        let book = Book(context: context)
 //        book.title = "Lord of the Rings"
 //        book.author = "J.R.R Tolking"
 //        book.genre = "Fantasy"
 //        book.rating = 6
 //        book.review = "My book review"
-//        
-//        
+//
+//
 //        DetailView()
 //            .environment(\.managedObjectContext, DataController.context)
 //    }
